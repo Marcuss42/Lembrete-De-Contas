@@ -6,7 +6,7 @@ from json import load, dump
 import send_email
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
-send_email.destinatario = "othiagooficial0@gmail.com"
+send_email.destinatario = "gislaniafrnacisco@gmail.com"
 
 app = Flask(__name__)
 
