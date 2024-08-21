@@ -1,0 +1,16 @@
+{
+    "internet": {
+        "meses_nao_pagos": [
+            "agosto",
+            "julho"
+        ],
+        "vencimento": "21"
+    },
+    "agua": {
+        "meses_nao_pagos": [
+            "agosto",
+            "julho"
+        ],
+        "vencimento": "21"
+    }
+}
