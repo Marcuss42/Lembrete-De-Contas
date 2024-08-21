@@ -89,7 +89,7 @@ def adicionar_mes(conta, mes):
 @app.route('/adicionar_conta/<conta>/<vencimento>', methods=['GET'])
 def adicionar_conta(conta, vencimento):
     contas[conta] = {
-            "meses_nao_pagos": [datetime.now().strftime("%B")],
+            "meses_nao_pagos": [meses_em_portugues[datetime.now().month]],
             "vencimento": vencimento
     }
 
