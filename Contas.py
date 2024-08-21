@@ -5,8 +5,15 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from json import load, dump
 import send_email
 
-locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
-send_email.destinatario = "gislaniafrnacisco@gmail.com"
+# locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+meses_em_portugues = {
+    1: "janeiro", 2: "fevereiro", 3: "março", 4: "abril",
+    5: "maio", 6: "junho", 7: "julho", 8: "agosto",
+    9: "setembro", 10: "outubro", 11: "novembro", 12: "dezembro"
+}
+    
+
+send_email.destinatario = "gislaniafrancisco@gmail.com"
 
 app = Flask(__name__)
 
@@ -27,7 +34,7 @@ def save(): dump(contas, open("contas.json", "w"), indent=4)
 
 def adicionar_mes_auto():
     hoje = datetime.now()
-    mes_atual = hoje.strftime('%B')  
+    mes_atual = meses_em_portugues[hoje.month]
     dia_atual = hoje.day
 
     for conta, info in contas.items():
@@ -36,7 +43,7 @@ def adicionar_mes_auto():
                 info['meses_nao_pagos'].append(mes_atual)
                 print(f"Novo mês {mes_atual} adicionado à conta {conta}.")
     save()
- 
+   
 @app.route('/', methods=['GET'])
 def home():
     return jsonify(contas)
@@ -44,7 +51,7 @@ def home():
 @app.route('/verificar_adicao', methods=['GET'])
 def verificar_adicao():
     adicionar_mes_auto()
-    save()
+    save() #2e
     return jsonify(contas)
 
 
