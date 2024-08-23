@@ -1,4 +1,4 @@
-import locale
+# import locale
 from datetime import datetime
 from flask import Flask, jsonify
 from apscheduler.schedulers.background import BackgroundScheduler
