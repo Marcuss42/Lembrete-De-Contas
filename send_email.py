@@ -2,7 +2,7 @@ import yagmail
 
 # Configurações do e-mail
 usuario = 'mpfrancisco2003@gmail.com'
-senha = 'ixll xgsz kjww fkjv'
+senha = 'ixll xgsz kjww fkjw'
 destinatario = ''
 assunto = 'Teste'
 conteudo = 'Teste'
